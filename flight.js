@@ -49,30 +49,57 @@ const vols = [{
 ];
 
 
-//Affichez tous les vols (destination - Date de départ- compagnie aérienne -
-//numero de vol - prix - durée du trajet)
-
+//Affichez tous les vols (destination - Date de départ- compagnie aérienne - numero de vol - prix - durée du trajet)
+  // vols.forEach((vol) => {
+  //   console.log(vol);
+  // });
 
 
 //Afficher tous les vols dont le trajet est inférieur à 7h. (idem)
-
+//   vols.forEach((vol) => {
+//     if (vol.dureeTrajet < 7){
+//         console.log(vol); 
+//     }
+//   });
 
 //Afficher les vols à destination de Tokyo et qui voyagent avec Air france (idem)
-
+//   vols.forEach((vol) => {
+//     if (vol.destination === 'Tokyo' && vol.compagnie_aerienne === 'Air france'){
+//         console.log(vol);
+//     }
+//   });
 
 
 //Afficher tous les vols dont le tarif est inférieur à 700 euros et qui
 //voyagent avec Air france
+//   vols.forEach((vol) => {
+//     if (vol.prix > 700 && vol.compagnie_aerienne === 'Air france'){
+//         console.log(vol);
+//     }
+//   });
 
 
 
 //Afficher tous les vols qui voyagent avec 'Lufthansa' dont le prix est inférieur à 900 euros
 //et dont la durée du trajet est inférieur à 15 heures
-
+//   vols.forEach((vol) => {
+//     if (vol.compagnie_aerienne === 'Lufthansa' && vol.prix < 900 && vol.dureeTrajet < 15){
+//         console.log(vol);
+//     }
+//   });
 
 
 //Appliquer une reduc de 20% sur chaque vol à destination de Tokyo.
-
+vols.forEach((vol) => {
+  if (vol.destination === 'Tokyo'){
+      const discount = vol.prix * 20 / 100;
+      const newPrice = vol.prix - discount;
+      vol.prix = newPrice;
+      
+      console.log("La réduction est de " + discount);
+      console.log(vol);
+  }
+});
 
 
 
